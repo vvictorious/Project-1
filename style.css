@@ -4,4 +4,16 @@
 	background-color: yellow;
 	margin-left: auto;
 	margin-right: auto;
+	position: relative;
+}
+#animation_for_click {
+	width: 700px;
+	height:700px;
+	background-color: yellow;
+	margin-left: auto;
+	margin-right: auto;
+	position: absolute;
+}
+#explosion {
+	display: none;
 }
