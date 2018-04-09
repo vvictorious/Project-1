@@ -2,11 +2,6 @@ let background = document.getElementById("background_for_click");
 let target= document.getElementById("target");
 
 
- background.onmouseover= function() {
- 	this.style.cursor="crosshair";
-}; 
-
-
 
 
 background.onmouseover= function myMove(){
@@ -20,13 +15,31 @@ background.onmouseover= function myMove(){
 			clearInterval(id);
 	} else {
 		pos++;
-		target.style.top = pos + 'px';
-		target.style.left = pos + 'px';
+		target.style.top = Math.round(Math.random() * pos) + 'px';
+		target.style.left = Math.round(Math.random() * pos) + 'px';
 	}
 	}
 }
 
-//check out tween max
+
+
+
+
+
+// function Init(){
+// 	spaceW = screen.height - picture.height;
+// 	spaceH = screen.width - picture.width;
+
+// 	setInterval(moveIt, 500);
+// }
+// function moveIt() {
+// 	picture.style.top = Math.round(Math.random() * spaceW) + 'px';
+// 	picture.style.left = Math.round(Math.random() * spaceH) + 'px';
+// }
+
+
+
+
 
 
 
