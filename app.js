@@ -3,47 +3,48 @@ let target= document.getElementById("target");
 
 
 
-		
+//this is my function that turns my mouse into a crosshair		
 background.onmouseover= function myMove(){
 	this.style.cursor="crosshair";
  }
 
-function frame () {
-	//this is getting called every 1000 milliseconds
+
+//this is the function that makes the target move 
+function frame() {
+	
+	//by play area is 700 by 700 pixels
+	//thereore, these variables make the dimensions for 
+	//the targets to move around randomly in
 	var random_margin_top = 670 * Math.random();
 	var random_margin_left = 670 * Math.random();
-	//not entirely sure what clear Interval means
+	//these 2 lines assigning the dimensions to the CSS
+	//and adding pixels so that it will actually work.
 	target.style.marginTop =  random_margin_top + 'px';
 	target.style.marginLeft = random_margin_left + 'px';
 }
 
-setInterval(frame, 1000);
+
+//this is calling the frame function every 1000 milliseconds
+setInterval(frame, 900);
+
+//this is what's "destroying the target"
 target.onclick = function destroy() {
-	target.parentNode.removeChild(target);
+	target.style.visibility = 'hidden';
+	setTimeout(makeVisible, 1000);
 };
 
-
-// id
-//maybe make x and y variables with the math.floor/math.random methods
-//make a variable that acknowledges distance from the center of the background
-//
-
-//margin
+function makeVisible(){
+	target.style.visibility = "visible"
+}
 
 
 
 
 
 
-//this is the start to the timer
-
-// let count = 0
-// let intId = setInterval(counter, 1000);
-
-// function counter(){
-// 	console.log(++count);
-
-// }
+// function respawn(){
+// 	setTimeout(target.style.visibility = 'block', 1000);
+// };
 
 
 
@@ -61,19 +62,36 @@ target.onclick = function destroy() {
 
 
 
-// function Init(){
-// 	spaceW = screen.height - picture.height;
-// 	spaceH = screen.width - picture.width;
 
-// 	setInterval(moveIt, 500);
-// }
-// function moveIt() {
-// 	picture.style.top = Math.round(Math.random() * spaceW) + 'px';
-// 	picture.style.left = Math.round(Math.random() * spaceH) + 'px';
-// }
+// setTimeout(respawn, 3000){
+// 	target.style.display = 'block';
+// };
 
 
-//deploy the game on surge or github pages
+
+
+// target.onclick = function destroy() {
+// 	target.parentNode.removeChild(target);
+// };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
