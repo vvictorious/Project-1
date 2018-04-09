@@ -1,19 +1,12 @@
 #background_for_click {
+	height: 700px;
 	width: 700px;
-	height:700px;
 	background-color: yellow;
-	margin-left: auto;
-	margin-right: auto;
+ 	margin-left: auto;
+ 	margin-right: auto;
 	position: relative;
 }
-#animation_for_click {
-	width: 700px;
-	height:700px;
-	background-color: yellow;
-	margin-left: auto;
-	margin-right: auto;
+
+#target {
 	position: absolute;
-}
-#explosion {
-	display: none;
 }
