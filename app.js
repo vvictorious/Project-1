@@ -3,28 +3,58 @@ let target= document.getElementById("target");
 
 
 
-
+		
 background.onmouseover= function myMove(){
-	 background.onmouseover= 
- 	this.style.cursor="crosshair";
- 	// var elem =document.getElementById("target");
-	var pos = 1000 * Math.random();
-	// Math.random(pos)
-	var id = setInterval(frame, 1000);
-	function frame () {
-		if (pos ==350) {
-			clearInterval(id);
-	} else {
-		pos++;
-		target.style.top = Math.round(Math.random() * pos) + 'px';
-		target.style.left = Math.round(Math.random() * pos) + 'px';
-	}
-	}
+	this.style.cursor="crosshair";
+ }
+
+function frame () {
+	//this is getting called every 1000 milliseconds
+	var random_margin_top = 670 * Math.random();
+	var random_margin_left = 670 * Math.random();
+	//not entirely sure what clear Interval means
+	target.style.marginTop =  random_margin_top + 'px';
+	target.style.marginLeft = random_margin_left + 'px';
 }
 
+setInterval(frame, 1000);
 target.onclick = function destroy() {
 	target.parentNode.removeChild(target);
 };
+
+
+// id
+//maybe make x and y variables with the math.floor/math.random methods
+//make a variable that acknowledges distance from the center of the background
+//
+
+//margin
+
+
+
+
+
+
+//this is the start to the timer
+
+// let count = 0
+// let intId = setInterval(counter, 1000);
+
+// function counter(){
+// 	console.log(++count);
+
+// }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -42,6 +72,8 @@ target.onclick = function destroy() {
 // 	picture.style.left = Math.round(Math.random() * spaceH) + 'px';
 // }
 
+
+//deploy the game on surge or github pages
 
 
 
