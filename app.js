@@ -8,8 +8,9 @@ background.onmouseover= function myMove(){
 	 background.onmouseover= 
  	this.style.cursor="crosshair";
  	// var elem =document.getElementById("target");
-	var pos = 0;
-	var id = setInterval(frame, 10);
+	var pos = 1000 * Math.random();
+	// Math.random(pos)
+	var id = setInterval(frame, 1000);
 	function frame () {
 		if (pos ==350) {
 			clearInterval(id);
@@ -20,6 +21,10 @@ background.onmouseover= function myMove(){
 	}
 	}
 }
+
+target.onclick = function destroy() {
+	target.parentNode.removeChild(target);
+};
 
 
 
