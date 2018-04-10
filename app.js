@@ -5,6 +5,14 @@ let background = document.getElementById("background_for_click");
 let score = document.getElementById("score");  //when I add.value; the target stops moving
 // console.log(target);
 
+var timeleft = 30;
+var downloadTimer = setInterval(function(){
+	timeleft--;
+ 	document.getElementById("countdown").textContent = timeleft;
+  	if(timeleft <= 0)
+    	clearInterval(downloadTimer);
+},1000);
+
 function createTarget(){
 	let target =document.createElement("img")
 	target.setAttribute("id", "targetObject")
