@@ -17,56 +17,43 @@ function createTarget(){
 
 
 function randomize(dart){
-	var random_margin_top = 650 * Math.random();
-	var random_margin_left = 650 * Math.random();
-	dart.style.marginTop =  random_margin_top + 'px';
-	dart.style.marginLeft = random_margin_left + 'px';
+	//these methods make the dimensions for 
+	//the targets to move around randomly in
+	var random_top = 650 * Math.random();
+	var random_left = 650 * Math.random();
+	// //these 2 lines assigning the dimensions to the CSS
+	// //and adding pixels so that it will actually work.
+	dart.style.top =  (random_top + 'px');
+	dart.style.left = (random_left + 'px');
+	console.log(dart.style.left)
 }
 
 
 
 
 //this is my function that turns my mouse into a crosshair		
-// background.onmouseover= function myMove(){
-// 	this.style.cursor="crosshair";
-//  }
+background.onmouseover= function myMove(){
+	this.style.cursor="crosshair";
+ }
 
 
-//this is the function that makes the target move
-//called frame 
+//this is the function that makes the target respawn called frame
+//this is storing the create target function from above as a variable while calling that function
+//then we are calling the randomize function with the first target variable as a parameter
+//then we are setting the interval which is taking randomize, 1500 milliseconds, and first target as arguments.
 function frame() {
 	let firstTarget = createTarget();
-	//my play area is 700 by 700 pixels
-	randomize(firstTarget);
-	setInterval(randomize, 2000, firstTarget);
-	//thereore, these variables make the dimensions for 
-	//the targets to move around randomly in
-	// var random_margin_top = 650 * Math.random();
-	// var random_margin_left = 650 * Math.random();
-	// //these 2 lines assigning the dimensions to the CSS
-	// //and adding pixels so that it will actually work.
-	// firstTarget.style.marginTop =  random_margin_top + 'px';
-	// firstTarget.style.marginLeft = random_margin_left + 'px';
-	console.log(firstTarget);
+	randomize(firstTarget.parentNode);
+
+	setInterval(randomize, 2000, firstTarget.parentNode);
+	// console.log(firstTarget);
+		
 }
 
 
-//this is calling the frame function every how ever many milliseconds
-
+//this is calling frame right above
 frame()
-//this is what's "destroying the target"
-// target.onclick = function destroy() {
 
-// 	target.style.visibility = 'hidden';
-// 	//the setTimeout is the function that makes the target reappear
-// 	//every how ever many seconds.
-// 	setTimeout(makeVisible, 1000);
-// 	if (target.onclick=true) {
-// 		score += 10;
-// 	}
-// 		var lblScore = document.getElementById('score_tracker');
-// 		score_tracker.innerHTML=score;
-// };
 
 function addScore() {
 	let oldTarget = document.getElementById("targetObject")
@@ -75,56 +62,44 @@ function addScore() {
 	var lblScore = document.getElementById('score_tracker');
 	score_tracker.innerHTML=score;
 	frame();
+	debugger
+	if(score > 30) {
+		let firstTarget = createTarget();
+		randomize(firstTarget);
+		setInterval(randomize, 1500, firstTarget);
+	}
 }
 
+//this is me making my timer
 
 
-
-//I am calling to the makeVisible function to make its 
-//CSS style visible.  This part was confusing to me, but I get it 
-//now.  I made the makeVisible function with the two arguments
-//in the destroy function.  I need to call for it in another 
-//function with what it is going to do.
-function makeVisible(){
-	target.style.visibility = "visible"
-	console.log(target);
-}
-
-
-
-
-
-
-
-
-// function addScore() {
-// 	if(target.onclick=true) {
-//      	score += 10;
-//      	var lblScore = document.getElementById('score_tracker');
-// 		score_tracker.innerHTML=score;
-//  	}
-// };
-
-
-
-
-
-
-
-
-// let score = document.getElementById("lblscore").value;
-// function updatescore (value) {
-// 	if(target.onclick = true) {
-// 		score += 10;
+// let seconds = 60;
+// 	function secondPassed(){
+// 		let minutes - Math.round((seconds - 30) / 60);
+// 		let remainingSeconds = seconds  % 60;
+// 		if(remainingSeconds < 10){
+// 			remainingSeconds = "0" + remainingSeconds;
+// 		}
+// 		document.getElementById('countdown').innerHTML = minutes + ':' + remainingSeconds;
+// 		if(seconds == 0){
+// 			clearInterval(countdownTimer);
+// 			document.getElementById('countdown').innerHTML = "Buzz Buzz"
+// 		} else{
+// 			seconds --;
+// 		}
 // 	}
+// 	let countdownTimer = setInterval('secondPassed()', 1000);
 
-// };
 
-// if (target.onclick=true){
-// 	score += 10;
-// }
-// var lblScore = document.getElementById('lblScore');
-// lblScore.innerHTML=score;
+
+
+
+
+
+
+
+
+
 
 
 
