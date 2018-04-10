@@ -10,3 +10,12 @@
 #target {
 	display: hidden;
 }
+#safeTimer{
+	float: left;
+	padding: 0 0 0 15%;
+	
+}
+#score_board{
+	float: right;
+	padding: 0 15% 0 0;
+}
