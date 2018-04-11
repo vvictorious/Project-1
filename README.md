@@ -1,2 +1,5 @@
 # Project-1
 First shooting game ever
+
+
+This is the first game that I have ever made with JavaScript.  Currently, I have a shooting game where the goal is to shoot as many targets as possible during a thirty second period.  The instruction page goes over all of this and it has a start button.  When the start button is clicked the instructions go away, the target appears, and the timer begins.  After the designated amoiunt of time an alert box pops up telling the player how many points they scored.  What I wanted to get from building this game is a better understanding for the JavaScript language.  Therefore, I just used HTML, CSS, and vanilla JavaScript.  Originally, I had much more planned for this.  The original gameplan was to make it so that the target moves faster as the player gets more points.  Also, having an animation everytime that the target gets shot.  Making the game look more aesthetically pleasing was another thing that I did not have time to do.  However, what I did get from building what I have so far is a muc better understanding of the JavaScript language.
