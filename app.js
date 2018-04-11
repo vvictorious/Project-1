@@ -9,9 +9,15 @@ var timeleft = 30;
 var downloadTimer = setInterval(function(){
 	timeleft--;
  	document.getElementById("countdown").textContent = timeleft;
-  	if(timeleft <= 0)
+  	if(timeleft <= 0){
+  		alert("You scored " + score + " points");
     	clearInterval(downloadTimer);
+    	target_container.style.visibility='hidden';
+    	
+    }
 },1000);
+
+//i need target_container to stop
 
 function createTarget(){
 	let target =document.createElement("img")
@@ -33,6 +39,7 @@ function randomize(dart){
 	// //and adding pixels so that it will actually work.
 	dart.style.marginTop =  random_margin_top + 'px';
 	dart.style.marginLeft = random_margin_left + 'px';
+
 }
 
 
@@ -51,7 +58,7 @@ background.onmouseover= function myMove(){
 function frame() {
 	let firstTarget = createTarget();
 	randomize(firstTarget);
-	setInterval(randomize, 1500, firstTarget);
+	setInterval(randomize, 900, firstTarget);
 	// console.log(firstTarget);
 }
 
@@ -68,7 +75,6 @@ function addScore() {
 	frame();
 }
 
-//this is me making my timer
 
 
 
