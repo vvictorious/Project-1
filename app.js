@@ -4,18 +4,55 @@ let background = document.getElementById("background_for_click");
 // let target= document.getElementsByClassName("target");
 let score = document.getElementById("score");  //when I add.value; the target stops moving
 // console.log(target);
+let start =document.getElementById("startButton");
 
-var timeleft = 30;
-var downloadTimer = setInterval(function(){
+let title = document.getElementById("title");
+let description = document.getElementById("description");
+
+
+
+
+console.log(start);
+
+let timeleft = 30;
+
+//this is my function that turns my mouse into a crosshair		
+background.onmouseover= function myMove(){
+	this.style.cursor="crosshair";
+ }
+
+
+ start.onclick = function (){
+ 	console.log('start button');
+ 	let centerBox =document.getElementById("gameInfo");
+ 	centerBox.style.display = "none";
+ 	document.getElementById("target_container").style.display = 'inline-block';
+ 	var downloadTimer = setInterval(function(){
 	timeleft--;
  	document.getElementById("countdown").textContent = timeleft;
   	if(timeleft <= 0){
   		alert("You scored " + score + " points");
     	clearInterval(downloadTimer);
-    	target_container.style.visibility='hidden';
-    	
+    	document.getElementById('target_container').style.display='none';
+    	centerBox.removeChild(description);
+    	centerBox.removeChild(start);
+    	centerBox.style.display = "block";
+
+
     }
 },1000);
+ 	
+ }
+
+
+
+
+
+
+
+
+
+
 
 //i need target_container to stop
 
@@ -28,6 +65,8 @@ function createTarget(){
 	targetContainer.appendChild(target);
 	return target;
 }
+
+
 
 
 function randomize(dart){
@@ -45,10 +84,6 @@ function randomize(dart){
 
 
 
-//this is my function that turns my mouse into a crosshair		
-background.onmouseover= function myMove(){
-	this.style.cursor="crosshair";
- }
 
 
 //this is the function that makes the target respawn called frame
@@ -63,6 +98,8 @@ function frame() {
 }
 
 
+
+
 //this is calling frame right above
 frame()
 
@@ -74,7 +111,6 @@ function addScore() {
 	score_tracker.innerHTML=score;
 	frame();
 }
-
 
 
 

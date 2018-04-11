@@ -6,19 +6,29 @@
  	margin-right: auto;
 	position: relative;
 }
-
-#target {
-	display: hidden;
+#gameInfo {
+	
+	position: absolute;
+	background-color: red;
+	left: 50%;
+	top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 20px;
 }
+
+
 #safeTimer{
-	float: left;
+	float: left;-50%
 	padding: 0 0 0 15%;
+	font-family: futura;
 	
 }
 #score_board{
 	float: right;
 	padding: 0 15% 0 0;
+	font-family: futura;
 }
-#targetObject{
-	display: inline-block;
+#target_container {
+	display: none;
 }
